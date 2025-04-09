@@ -9,14 +9,14 @@ RSpec.describe FollowRequestsController, type: :controller do
         username: "sender",
         email: "sender@example.com",
         password: "password",
-        avatar_image: "https://robohash.org/sender.png"
+        avatar_image: File.open("#{Rails.root}/spec/support/test_image.jpeg")
       )
 
       recipient = User.create(
         username: "recipient",
         email: "recipient@example.com",
         password: "password",
-        avatar_image: "https://robohash.org/recipient.png"
+        avatar_image: File.open("#{Rails.root}/spec/support/test_image.jpeg")
       )
 
       sign_in sender
@@ -36,14 +36,14 @@ RSpec.describe FollowRequestsController, type: :controller do
         username: "sender",
         email: "sender@example.com",
         password: "password",
-        avatar_image: "https://robohash.org/sender.png"
+        avatar_image: File.open("#{Rails.root}/spec/support/test_image.jpeg")
       )
 
       recipient = User.create(
         username: "recipient",
         email: "recipient@example.com",
         password: "password",
-        avatar_image: "https://robohash.org/recipient.png"
+        avatar_image: File.open("#{Rails.root}/spec/support/test_image.jpeg")
       )
 
       follow_request = FollowRequest.create(
